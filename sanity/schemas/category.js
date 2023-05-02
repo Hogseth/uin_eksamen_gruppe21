@@ -28,7 +28,7 @@ export default {
         {
             name:'game_category_image',
             type:'image',
-            title:'Categorpicture',
+            title:'Categorypicture',
         }
     ]
 }
