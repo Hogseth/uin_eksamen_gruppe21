@@ -2,4 +2,41 @@ h1 {
   color: red;
 }
 
-/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uL3Nhc3MvbWFpbi5zY3NzIiwibWFpbi5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFBRyxVQUFBO0FDRUgiLCJmaWxlIjoibWFpbi5jc3MifQ== */
+header {
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-between;
+  height: 3rem;
+  font-size: 20px;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  padding-right: 1rem;
+  align-items: center;
+}
+
+nav p {
+  color: white;
+  font-weight: bold;
+  margin: 0;
+}
+
+header img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  padding-left: 2rem;
+}
+
+nav img {
+  height: auto;
+  width: 100%;
+  max-width: 3rem;
+}
+
+/*# sourceMappingURL=main.css.map */
