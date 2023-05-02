@@ -1,1 +1,37 @@
 h1{color:red}
+
+header {
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-between;
+    height: 3rem;
+    font-size: 20px;
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    padding-right: 1rem;
+    align-items: center;
+}
+
+nav p {
+    color: white;
+    font-weight: bold;
+    margin: 0;
+}
+
+header img{
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    padding-left: 2rem;
+}
+nav img{
+    height: auto;
+    width: 100%;
+    max-width: 3rem;
+}
