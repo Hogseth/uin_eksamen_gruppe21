@@ -1,6 +1,7 @@
 import "./css/main.css"
 import Header from "./components/Header";
 import { useState , useEffect} from 'react';
+import { fetchAllGames } from "./utils/sanity/showServices";
 
 function App() {
   
@@ -16,6 +17,17 @@ function App() {
 useEffect(() =>{
   getGames()
 },[])
+
+const [gametitles, setShows] = useState(null)
+async function getShows() {
+  const data = await fetchAllGames()
+  setShows(data)
+  console.log(data)
+}
+
+useEffect(() => {
+  getShows()
+}, [])
   
   return (
     <div className="App">
