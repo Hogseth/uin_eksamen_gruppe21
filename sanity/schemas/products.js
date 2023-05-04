@@ -33,6 +33,11 @@ export default {
             title:'Gamegenres',
             of: [{type: 'string'}]
         },
+        {
+            name: 'favoritelist',
+            title: 'Favoritelist',
+            type: 'boolean'
+          },
         
         {
             name:'api_id',
