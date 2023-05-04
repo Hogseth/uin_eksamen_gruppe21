@@ -21,7 +21,19 @@ export default {
                 .slice(0, 150)
             }
         },
-      
+        {
+            name:'game_category',
+            type:'string',
+            title:'Gamecategory'
+
+        },
+        {
+            name:'game_genres',
+            type:'array',
+            title:'Gamegenres',
+            of: [{type: 'string'}]
+        },
+        
         {
             name:'api_id',
             type:'number',
