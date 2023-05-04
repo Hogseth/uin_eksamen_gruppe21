@@ -15,7 +15,7 @@ export default function Header() {
         <>
             <header>
                 <img src={logo}/>
-                <section>
+                <section id="top">
                     <p>Shop</p>
                     <p>My Games</p>
                     <p>Favourites</p>

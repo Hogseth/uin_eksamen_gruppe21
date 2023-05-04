@@ -8,7 +8,7 @@ header {
   font-size: 20px;
 }
 
-section {
+#top {
   display: flex;
   gap: 1rem;
   justify-content: flex-end;
@@ -16,7 +16,7 @@ section {
   align-items: center;
 }
 
-section p {
+#top p {
   color: white;
   font-weight: bold;
   margin: 0;
@@ -30,14 +30,14 @@ header img {
   padding-left: 2rem;
 }
 
-section img {
+#top img {
   height: auto;
   width: 100%;
   max-width: 3rem;
 }
 
 @media (max-width: 980px) {
-  section p {
+  #top p {
     display: none;
   }
   #profilepicture {
@@ -79,6 +79,66 @@ nav a {
   display: flex;
   float: right;
   flex-direction: column;
+}
+
+#shop-section {
+  display: flex;
+  background-color: rgb(222, 217, 217);
+  margin: 0rem 2rem;
+  padding: 3rem;
+  border: 1px solid black;
+  justify-content: space-evenly;
+  overflow: hidden;
+}
+
+#gameshop-title {
+  display: flex;
+}
+
+#gameshop-title h2 {
+  padding: 0.5rem 0.5rem 0.5rem 2rem;
+  margin: 0;
+  font-size: 25px;
+}
+
+#gameshop-title a {
+  margin: 0.4rem;
+  padding: 0.1rem 0.7rem;
+  font-size: 25px;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 5%;
+  background-color: black;
+  color: white;
+}
+
+.gameshop-container {
+  display: flex;
+}
+
+.gameshop-info * {
+  display: flex;
+  flex-direction: column;
+  padding: 0.25rem;
+  margin: 0;
+}
+
+.gameshop-info {
+  margin: 1rem;
+}
+
+.gameshop-info a {
+  font-size: 30px;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  background-color: black;
+  color: white;
+  padding: 0 2rem;
+}
+
+.gameshop-info h3 {
+  font-size: 20px;
 }
 
 /*# sourceMappingURL=main.css.map */
