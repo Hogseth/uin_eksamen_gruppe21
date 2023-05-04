@@ -24,9 +24,9 @@ export default {
        
         {
             name:'game_genres',
-            type:'array',
+            type:'reference',
             title:'Gamegenres',
-            of: [{type: 'gamegeneres'}]
+            to: [{type: 'gamegeneres'}]
             
         },
         {
