@@ -1,21 +1,21 @@
 export default {
-    name:'gamecategories',
+    name:'gamegeneres',
     type:'document', //document vanligst brukt. Et document vil alltid bli innholdstype som vises i sanity. Hadde det vært object så kunne det bli brukt i et annet element.  
-    title:'Gamecategories',
+    title:'Gamegeneres',
     fields: [
         {
-            name:'category_title',
+            name:'genre_title',
             type:'string',
-            title:'Categoryname',
+            title:'Genrename',
         },
 
         {
 
-            name:'category_slug',
+            name:'genre_slug',
             type: 'slug',
             title:'URL-tittel',
             options:{
-                source: 'category_title',
+                source: 'genre_title',
                 slugify: input => input.toLowerCase()
                                 .replace((/\s+/g,/[^\w-]+/g), '-')
                                 .slice(0, 150)
@@ -24,11 +24,6 @@ export default {
 
         },
 
-
-        {
-            name:'game_category_image',
-            type:'image',
-            title:'Categorypicture',
-        }
+        
     ]
 }
