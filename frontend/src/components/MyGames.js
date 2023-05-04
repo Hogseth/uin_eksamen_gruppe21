@@ -1,6 +1,7 @@
 export default function MyGames(){
     return(
         <>
+        <div id="games-showcase">
             <h2 id="mygames-title">MY GAMES-LIBRARY (21 games)</h2>
         <section id="mygames">
             <div className="container">
@@ -36,6 +37,7 @@ export default function MyGames(){
                 </div>
             </div>
         </section>
+        </div>
         </>
     )
 }

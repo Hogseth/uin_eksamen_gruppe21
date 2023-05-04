@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import {useEffect, useState} from "react";
 import GameShop from "./components/GameShop";
 import MyGames from "./components/MyGames";
+import Favorites from "./components/Favorites";
 
 function App() {
 
@@ -25,7 +26,10 @@ useEffect(() =>{
     <div className="App">
       <Header />
       <GameShop />
-      <MyGames />
+      <section id="games">
+        <MyGames />
+        <Favorites />
+      </section>
     </div>
     
   );
