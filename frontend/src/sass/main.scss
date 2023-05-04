@@ -78,15 +78,12 @@ nav a {
 
 #list.show{
     display: block;
-    position: absolute;
-    top: 50px;
-    left: 0;
     background-color: black;
     color: white;
-    padding: -6px;
-    width: auto;
-    height: 400px;
-    display: grid;
-    justify-items: end;
+    width: 10rem;
+    height: auto;
+    display: flex;
+    float: right;
+    flex-direction: column;
 }
 
