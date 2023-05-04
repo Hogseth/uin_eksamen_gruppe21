@@ -43,7 +43,20 @@ section img{
     #profilepicture {
         display: none;
     }
+
+    #menu {
+        display: block;
+    }
+
 }
+
+@media (min-width: 980px) {
+    #menu {
+        display: none;
+    }
+}
+
+
 
 nav {
     background-color: black;
@@ -62,6 +75,3 @@ nav a {
     font-size: 20px;
 }
 
-.hide {
-    display: none;
-}
