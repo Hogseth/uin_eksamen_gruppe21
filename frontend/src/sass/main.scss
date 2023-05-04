@@ -116,22 +116,22 @@ nav a {
     color: white;
 }
 
-.gameshop-container {
+.container {
     display: flex;
 }
 
-.gameshop-info *{
+.games-info *{
     display: flex;
     flex-direction: column;
     padding: .25rem;
     margin: 0;
 }
 
-.gameshop-info{
+.games-info{
     margin: 1rem;
 }
 
-.gameshop-info a {
+.games-info a {
     font-size: 30px;
     font-weight: bold;
     border: 1px solid black;
@@ -141,6 +141,25 @@ nav a {
     padding: 0 2rem;
 }
 
-.gameshop-info h3 {
+.games-info h3 {
     font-size: 20px;
+}
+
+#mygames{
+    width: 100%;
+    max-width: 55%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: .5rem 2rem;
+    margin: 1rem 2rem;
+    gap: 2rem;
+}
+
+#mygames-title{
+    padding: 1rem 4rem;
+}
+
+.games-info p{
+    font-weight: bold;
 }

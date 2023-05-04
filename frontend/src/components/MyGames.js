@@ -1,17 +1,14 @@
-export default function GameShop(){
+export default function MyGames(){
     return(
         <>
-        <div id="gameshop-title">
-            <h2>GAMESHOP</h2>
-            <a>Visit Shop</a>
-        </div>
-        <section id="shop-section">
+            <h2 id="mygames-title">MY GAMES-LIBRARY (21 games)</h2>
+        <section id="mygames">
             <div className="container">
                 <img src="https://placehold.jp/150x150.png"/>
                 <div className="games-info">
                     <h2>TITLE</h2>
                     <h3>Action</h3>
-                    <a>BUY</a>
+                    <p>Hours played: 10</p>
                 </div>
             </div>
             <div className="container">
@@ -19,7 +16,7 @@ export default function GameShop(){
                 <div className="games-info">
                     <h2>TITLE</h2>
                     <h3>Action</h3>
-                    <a>BUY</a>
+                    <p>Hours played: 10</p>
                 </div>
             </div>
             <div className="container">
@@ -27,7 +24,15 @@ export default function GameShop(){
                 <div className="games-info">
                     <h2>TITLE</h2>
                     <h3>Action</h3>
-                    <a>BUY</a>
+                    <p>Hours played: 10</p>
+                </div>
+            </div>
+            <div className="container">
+                <img src="https://placehold.jp/150x150.png"/>
+                <div className="games-info">
+                    <h2>TITLE</h2>
+                    <h3>Action</h3>
+                    <p>Hours played: 10</p>
                 </div>
             </div>
         </section>

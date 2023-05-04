@@ -2,6 +2,7 @@ import "./css/main.css";
 import Header from "./components/Header";
 import {useEffect, useState} from "react";
 import GameShop from "./components/GameShop";
+import MyGames from "./components/MyGames";
 
 function App() {
 
@@ -24,6 +25,7 @@ useEffect(() =>{
     <div className="App">
       <Header />
       <GameShop />
+      <MyGames />
     </div>
     
   );
