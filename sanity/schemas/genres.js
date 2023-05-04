@@ -8,7 +8,6 @@ export default {
             type:'string',
             title:'Genrename',
         },
-
         {
 
             name:'genre_slug',
