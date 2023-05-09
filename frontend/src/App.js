@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import GameShop from "./components/GameShop";
 import MyGames from "./components/MyGames";
 import Favorites from "./components/Favorites";
+import { fetchAllGames } from "./utils/sanity/showServices";
 
 function App() {
 
@@ -21,6 +22,12 @@ useEffect(() =>{
   getGames()
 },[])
 */
+const [gametitles, setShows] = useState(null)
+async function getShows() {
+  const data = await fetchAllGames()
+  setShows(data)
+  console.log(data)
+}
 
   return (
     <div className="App">
