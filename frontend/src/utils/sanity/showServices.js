@@ -5,4 +5,3 @@ export const fetchAllGames = async () => {
     return data
    
 }
-console.log(data)
