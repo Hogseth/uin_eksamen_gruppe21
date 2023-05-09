@@ -22,12 +22,18 @@ useEffect(() =>{
   getGames()
 },[])
 */
-const [gametitles, setShows] = useState(null)
-async function getShows() {
+const [games, getGam] = useState(null)
+
+const getGames = async () => {
   const data = await fetchAllGames()
-  setShows(data)
-  console.log(data)
+  getGam(data)
+   
 }
+console.log(games) 
+
+useEffect(() => {
+  getGames()
+}, [])
 
   return (
     <div className="App">
