@@ -16,11 +16,11 @@ export default function Header() {
             <header>
                 <img src={logo}/>
                 <section id="top">
-                    <p>Shop</p>
-                    <p>My Games</p>
-                    <p>Favourites</p>
+                    <a>Shop</a>
+                    <a>My Games</a>
+                    <a>Favorites</a>
                     <img id="profilepicture" src={userimg} />
-                    <p>USERNAME</p>
+                    <a>USERNAME</a>
                     <img id="menu" src={menu} onClick={toggleMenu} />
                 </section>
             </header>
@@ -28,7 +28,7 @@ export default function Header() {
                 <a>USERNAME</a>
                 <a>Shop</a>
                 <a>My Games</a>
-                <a>Favourites</a>
+                <a>Favorites</a>
             </nav>
         </>
     )

@@ -4,6 +4,8 @@ import {useEffect, useState} from "react";
 import GameShop from "./components/GameShop";
 import MyGames from "./components/MyGames";
 import Favorites from "./components/Favorites";
+import MyGamesPage from "./components/MyGamesPage";
+import Footer from "./components/Footer";
 
 function App() {
 
@@ -20,7 +22,7 @@ function App() {
 useEffect(() =>{
   getGames()
 },[])
-*/
+
 
   return (
     <div className="App">
@@ -30,6 +32,14 @@ useEffect(() =>{
         <MyGames />
         <Favorites />
       </section>
+    </div>
+    
+  );*/
+
+  return (
+    <div className="App">
+      <MyGamesPage/>
+      <Footer/>
     </div>
     
   );

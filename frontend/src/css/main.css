@@ -12,11 +12,11 @@ header {
   display: flex;
   gap: 1rem;
   justify-content: flex-end;
-  padding-right: 1rem;
   align-items: center;
+  padding: 1rem;
 }
 
-#top p {
+#top a {
   color: white;
   font-weight: bold;
   margin: 0;
@@ -37,7 +37,7 @@ header img {
 }
 
 @media (max-width: 980px) {
-  #top p {
+  #top a {
     display: none;
   }
   #profilepicture {
@@ -185,6 +185,51 @@ nav a {
 
 #games-showcase {
   width: 55%;
+}
+
+.gamespage-game {
+  padding: 2rem;
+  font-size: 20px;
+}
+
+#games-page {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20%;
+  margin-top: 1rem;
+}
+
+footer {
+  background-color: paleturquoise;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+footer a {
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 10%;
+  text-decoration: underline;
+}
+
+footer a:hover {
+  color: red;
+}
+
+#top a:hover {
+  color: red;
+}
+
+#list a:hover {
+  color: red;
+}
+
+#menu {
+  padding: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
