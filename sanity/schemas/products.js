@@ -2,6 +2,7 @@ export default {
     name: 'gameproducts',
     title:'Games',
     type:'document',
+    
     fields: [
         {
             name:'game_title',
@@ -40,7 +41,9 @@ export default {
         {
             name: 'favoritelist',
             title: 'Favoritelist',
-            type: 'boolean'
+            type: 'boolean',
+            initialValue: false
+            //https://www.sanity.io/docs/initial-value-templates// For finding how to se the favorite slider to default to be on false, unless clicked. 
           },
         
         {
@@ -56,7 +59,7 @@ export default {
 
         
        
-    ]
-   
+    ],
+    
 
 }
