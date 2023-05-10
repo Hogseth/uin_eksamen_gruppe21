@@ -13,3 +13,10 @@ export const fetchGame = async (api_id) => {
     return data
    
 }
+
+export const favoriteGameCount = async () => {
+    const data = await client.fetch(`count(*[_type == 'gameproducts' && favoritelist])`)
+    return data
+    
+}
+

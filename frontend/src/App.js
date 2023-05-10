@@ -35,6 +35,7 @@ useEffect(() => {
   getGames()
 }, [])
 
+
   return (
     <div className="App">
       <Header />
