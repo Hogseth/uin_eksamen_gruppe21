@@ -187,4 +187,19 @@ nav a {
   width: 55%;
 }
 
+#gameprofile {
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+#gameinformation {
+  border: 1px solid black;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+
 /*# sourceMappingURL=main.css.map */
