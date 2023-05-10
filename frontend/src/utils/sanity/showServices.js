@@ -19,4 +19,10 @@ export const favoriteGameCount = async () => {
     return data
     
 }
+export const myGameCount = async () => {
+    const data = await client.fetch(`count(*[_type == 'gameproducts'])`)
+    return data
+    
+}
 
+//https://www.sanity.io/docs/query-cheat-sheet midt på siden så fant vi et eksempel på hvordan man kan telle(count) favorite games/my games//
