@@ -19,7 +19,16 @@ const MyGames = () => {
         <div key={game.api_id}>
           <h2>{game.game_title}</h2>
           <p>{game.hours_played} hours played</p>
-          <p>Genres: {game.game_genres.join(", ")}</p>
+          <p>
+  Genres:{" "}
+  {game.game_genres.map((genre, index) => (
+    <span key={genre.genre_slug.current}>
+      {genre.genre_title}
+      {index < game.game_genres.length - 1 && " "}
+    </span>
+  ))}
+</p>
+
         </div>
       ))}
     </div>
@@ -27,3 +36,4 @@ const MyGames = () => {
 };
 
 export default MyGames;
+
