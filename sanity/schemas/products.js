@@ -1,14 +1,16 @@
+import { PlayIcon } from "@sanity/icons" //https://www.sanity.io/docs/icons-for-data-types got info from here, added it to give more enjoyable look on sanity.
+
 export default {
     name: 'gameproducts',
     title:'Games',
     type:'document',
+    icon: PlayIcon,    
     
     fields: [
         {
             name:'game_title',
             type:'string',
-            title:'Gametitle'
-
+            title:'Gametitle',
         },
         {
             name: 'slug',
