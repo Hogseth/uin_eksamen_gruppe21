@@ -1,43 +1,29 @@
-export default function MyGames(){
-    return(
-        <>
-        <div id="games-showcase">
-            <h2 id="mygames-title">MY GAMES-LIBRARY (21 games)</h2>
-        <section id="mygames">
-            <div className="container">
-                <img src="https://placehold.jp/150x150.png"/>
-                <div className="games-info">
-                    <h2>TITLE</h2>
-                    <h3>Action</h3>
-                    <p>Hours played: 10</p>
-                </div>
-            </div>
-            <div className="container">
-                <img src="https://placehold.jp/150x150.png"/>
-                <div className="games-info">
-                    <h2>TITLE</h2>
-                    <h3>Action</h3>
-                    <p>Hours played: 10</p>
-                </div>
-            </div>
-            <div className="container">
-                <img src="https://placehold.jp/150x150.png"/>
-                <div className="games-info">
-                    <h2>TITLE</h2>
-                    <h3>Action</h3>
-                    <p>Hours played: 10</p>
-                </div>
-            </div>
-            <div className="container">
-                <img src="https://placehold.jp/150x150.png"/>
-                <div className="games-info">
-                    <h2>TITLE</h2>
-                    <h3>Action</h3>
-                    <p>Hours played: 10</p>
-                </div>
-            </div>
-        </section>
+import React, { useState, useEffect } from "react";
+import { fetchAllGames } from "../utils/sanity/showServices";
+
+const MyGames = () => {
+  const [games, setGames] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const allGames = await fetchAllGames();
+      setGames(allGames);
+    };
+    fetchData();
+  }, []);
+
+  return (
+    <div>
+      <h1>My Games</h1>
+      {games.map((game) => (
+        <div key={game.api_id}>
+          <h2>{game.game_title}</h2>
+          <p>{game.hours_played} hours played</p>
+          <p>Genres: {game.game_genres.join(", ")}</p>
         </div>
-        </>
-    )
-}
+      ))}
+    </div>
+  );
+};
+
+export default MyGames;
