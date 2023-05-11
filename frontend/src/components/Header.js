@@ -20,7 +20,7 @@ export default function Header() {
                 </Link>
                 
                 <section id="top">
-                    <p>Shop</p>
+                    <Link to="gameshop"><p>Shop</p></Link>
                     <Link to="mygames"><p>My Games</p></Link>
                     <Link to="favorites"><p>Favourites</p></Link>
                     <img id="profilepicture" src={userimg} />
@@ -30,7 +30,7 @@ export default function Header() {
             </header>
             <nav id="list" className={`${showMenu ? "show" : ""}`}>
                 <a>USERNAME</a>
-                <a>Shop</a>
+                <Link to="gameshop"><p>Shop</p></Link>
                 <Link to="mygames"><p>My Games</p></Link>
                 <Link to="favorites"><p>Favourites</p></Link>
             </nav>

@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom"
 export default function GameShop(){
     return(
         <>
         <div id="gameshop-title">
             <h2>GAMESHOP</h2>
-            <a>Visit Shop</a>
+            <Link to="gameshop"><p>Visit Shop</p></Link>
         </div>
         <section id="shop-section">
             <div className="container">
