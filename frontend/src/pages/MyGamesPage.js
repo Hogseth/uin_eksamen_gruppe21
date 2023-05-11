@@ -1,4 +1,4 @@
-import GamesPage from "../components/MyGamesPage"
+import GamesPage from "../components/GamesPage"
 import MyGamesCount from "../components/MyGamesCount"
 export default function MyGamesPage(){
     return(
