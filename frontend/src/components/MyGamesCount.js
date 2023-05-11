@@ -29,11 +29,7 @@ const MyGamesCount = () => {
   const countGames = () => games.length;
 
   return (
-    
-    
-      <p>My Games ({countGames()} Games) </p>
-      
-   
+<>{countGames()}</>
   );
 };
 //https://www.w3schools.com/react/react_props.asp

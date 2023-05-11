@@ -38,9 +38,7 @@ const FavoriteGamesCount = () => {
 
 
   return (
-    
-      <p>My Favorites ({gameCount} Games) </p>
-      
+      <>{gameCount}</>
   );
 };
 

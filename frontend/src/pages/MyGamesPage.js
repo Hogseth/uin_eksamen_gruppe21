@@ -1,10 +1,10 @@
-import GamesPage from "../components/GamesPage"
+import GamesPage from "../components/MyGamesPage"
 import MyGamesCount from "../components/MyGamesCount"
 export default function MyGamesPage(){
     return(
         <>
         
-        <h1><MyGamesCount/></h1>
+        <h1>My games Library(<MyGamesCount/>):</h1>
         <GamesPage/>
         </>
         

@@ -30,7 +30,7 @@ const MyGames = () => {
 
   return (
     <article className="gamecard">
-      <h2>My Games ({countGames()} Games) </h2>
+      
       {games.map(game => (
         <div className="con" key={game.api_id}>
           <h2>{game.game_title}</h2>

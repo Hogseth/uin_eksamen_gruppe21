@@ -39,7 +39,7 @@ const FavGamesPage = () => {
   return (
     <article className="gamecard">
         
-      <h2>My Favorites ({gameCount} Games) </h2>
+      
       {games.map((game) => (
         <div key={game.api_id}>
           <h2>{game.game_title}</h2>
