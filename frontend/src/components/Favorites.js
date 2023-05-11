@@ -40,7 +40,7 @@ const Favorites = () => {
     <article className="gamecard">
         <Link to="/favorites">
       <div id="gameshop-title">
-          <button>Go to libary</button>
+          <button>Go to favorites</button>
         </div>
       </Link>
       <h2>My Favorites ({gameCount} Games) </h2>
