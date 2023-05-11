@@ -185,9 +185,24 @@ nav a {
 
 #games{
     display: flex;
-    flex-wrap:wrap;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 #games-showcase{
     width: 55%;
+}
+
+.gameImg{
+    width:100%;
+    max-width: 350px;
+    height: auto;
+}
+
+.gamecard{
+    margin-left: 2rem;
+}
+
+#favorites{
+    float: right;
 }

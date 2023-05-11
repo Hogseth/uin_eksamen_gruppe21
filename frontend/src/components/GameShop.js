@@ -1,4 +1,3 @@
-import { fetchAllGames } from "../utils/sanity/showServices"
 export default function GameShop(){
     return(
         <>
