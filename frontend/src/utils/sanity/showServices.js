@@ -23,6 +23,21 @@ export const fetchGame = async (api_id) => {
    
 }
 
+export const fetchFavoriteGames = async () => {
+  const data = await client.fetch(`
+  *[_type == 'gameproducts' && favoritelist]{
+        api_id,
+        favoritelist,
+        hours_played,
+        game_genres[]->{genre_title, genre_slug},
+        game_title,
+        slug
+  }
+  `)
+  return data
+  
+}
+
 export const favoriteGameCount = async () => {
     const data = await client.fetch(`count(*[_type == 'gameproducts' && favoritelist])`)
     return data
