@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { fetchAllGames } from "../utils/sanity/showServices";
 import { Link } from "react-router-dom";
 
-const MyGames = () => {
+const MyGamesCount = () => {
   const [games, setGames] = useState([]);
   const [gameDetails, setGameDetails] = useState({});
 
@@ -30,32 +30,11 @@ const MyGames = () => {
 
   return (
     
-    <article className="gamecard">
-      <Link to="/mygames">
-      <div id="gameshop-title">
-          <button>Go to libary</button>
-        </div>
-      </Link>
-      <h2>My Games ({countGames()} Games) </h2>
-      {games.slice(0, 4).map(game => (
-        <div key={game.api_id}>
-          <h2>{game.game_title}</h2>
-          <img className="gameImg" src={gameDetails[game.api_id]?.background_image} alt={game.game_title} />
-          <p>{game.hours_played} hours played</p>
-          <p>
-            Genres:{" "}
-            {game.game_genres.map((genre, index) => (
-              <span key={genre.genre_slug.current}>
-                {index > 0 && ", "}
-                {genre.genre_title}
-              </span>
-            ))}
-          </p>
-          {gameDetails[game.api_id] && <p>Released: {gameDetails[game.api_id].released}</p>}
-        </div>
-      ))}
-    </article>
+    
+      <p>My Games ({countGames()} Games) </p>
+      
+   
   );
 };
 //https://www.w3schools.com/react/react_props.asp
-export default MyGames;
+export default MyGamesCount;
