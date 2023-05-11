@@ -1,23 +1,69 @@
-export default function Favorites(){
-    return(
-        <>
-        <section id="favorites">
-            <h2>MY FAVORITES (6 games)</h2>
-            <div className="container">
-                <img src="https://placehold.jp/150x150.png"/>
-                <div className="games-info">
-                    <h2>TITLE</h2>
-                    <p>Hours played: 10</p>
-                </div>
-            </div>
-            <div className="container">
-                <img src="https://placehold.jp/150x150.png"/>
-                <div className="games-info">
-                    <h2>TITLE</h2>
-                    <p>Hours played: 10</p>
-                </div>
-            </div>
-        </section>
-        </>
-    )
-}
+import React, { useState, useEffect } from "react";
+import { fetchFavoriteGames } from "../utils/sanity/showServices";
+
+const Favorites = () => {
+  const [games, setGames] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const allGames = await fetchFavoriteGames();
+      setGames(allGames);
+      allGames.forEach(game => {
+        fetchGameDetails('3cf4f9ea58da46afa7bdc7f1679a8629', game.api_id);
+        console.log(fetchData)
+      });
+    };
+    fetchData();
+  }, []);
+  
+  const countGames = () => {
+    return games.length;
+  };
+
+  const [gameDetails, setGameDetails] = useState({});
+
+  const fetchGameDetails = (apiKey, apiId) => {
+    const url = `https://api.rawg.io/api/games/${apiId}?key=${apiKey}`;
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        setGameDetails(gameDetails => {
+          return {
+            ...gameDetails,
+            [apiId]: data
+          }
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  return (
+    <article className="gamecard">
+    <h2>My Favorites ({countGames()} Games) </h2>
+    {games.map((game) => (
+<div key={game.api_id}>
+  <h2>{game.game_title}</h2>
+  <img className="gameImg" src={gameDetails[game.api_id]?.background_image} alt={game.game_title} />
+  <p>{game.hours_played} hours played</p>
+  <p>
+    Genres:{" "}
+    {game.game_genres.map((genre, index) => (
+      <span key={genre.genre_slug.current}>
+        {index > 0 && ", "}
+        {genre.genre_title}
+      </span>
+    ))}
+  </p>
+  {gameDetails[game.api_id] && (
+    <p>Released: {gameDetails[game.api_id].released}</p>
+  )}
+</div>
+))}
+
+  </article>
+);
+};
+
+export default Favorites; 
