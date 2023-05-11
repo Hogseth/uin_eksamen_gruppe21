@@ -31,7 +31,7 @@ const MyGames = () => {
   return (
     <article className="gamecard">
       <h2>My Games ({countGames()} Games) </h2>
-      {games.map(game => (
+      {games.slice(0, 4).map(game => (
         <div key={game.api_id}>
           <h2>{game.game_title}</h2>
           <img className="gameImg" src={gameDetails[game.api_id]?.background_image} alt={game.game_title} />
