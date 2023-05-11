@@ -51,5 +51,5 @@ const MyGames = () => {
     </article>
   );
 };
-
+//https://www.w3schools.com/react/react_props.asp
 export default MyGames;
