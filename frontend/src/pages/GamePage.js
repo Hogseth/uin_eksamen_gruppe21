@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-export default function GamePage({games}){
+export default function GamePage(){
   
     return(
         <>

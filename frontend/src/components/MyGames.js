@@ -43,7 +43,7 @@ const MyGames = () => {
             <Link to={{
                 pathname: `/mygames/${game.game_title}`,
                
-            }}>
+            }} games= {games}>
                 <h2>{game.game_title}</h2>
                 <img className="gameImg" src={gameDetails[game.api_id]?.background_image} alt={game.game_title} />
             </Link>
