@@ -12,7 +12,7 @@ const MyGames = () => {
       setGames(allGames);
 
       allGames.forEach(game => {
-        const apiKey = '3cf4f9ea58da46afa7bdc7f1679a8629';
+        const apiKey = '9334c7d3b22742539c1b4fd26c6d27a3';
         const apiId = game.api_id;
         const url = `https://api.rawg.io/api/games/${apiId}?key=${apiKey}`;
         fetch(url)
@@ -37,10 +37,16 @@ const MyGames = () => {
         </div>
       </Link>
       <h2>My Games ({countGames()} Games) </h2>
+    
       {games.slice(0, 4).map(game => (
         <div key={game.api_id}>
-          <h2>{game.game_title}</h2>
-          <img className="gameImg" src={gameDetails[game.api_id]?.background_image} alt={game.game_title} />
+            <Link to={{
+                pathname: `/mygames/${game.game_title}`,
+               
+            }}>
+                <h2>{game.game_title}</h2>
+                <img className="gameImg" src={gameDetails[game.api_id]?.background_image} alt={game.game_title} />
+            </Link>
           <p>{game.hours_played} hours played</p>
           <p>
             Genres:{" "}
@@ -54,7 +60,9 @@ const MyGames = () => {
           {gameDetails[game.api_id] && <p>Released: {gameDetails[game.api_id].released}</p>}
         </div>
       ))}
+    
     </article>
+    
   );
 };
 //https://www.w3schools.com/react/react_props.asp

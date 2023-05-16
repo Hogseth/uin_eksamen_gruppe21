@@ -5,8 +5,9 @@ import GameShopPage from "./pages/GameShopPage";
 import MyGamesPage from "./pages/MyGamesPage";
 import { Route, Routes } from 'react-router-dom';
 import Dashboard from "./pages/Dashboard";
+import GamePage from "./pages/GamePage";
 
-function App() {
+function App({games}) {
 
 
   return (
@@ -16,6 +17,8 @@ function App() {
           <Route path='favorites' element={<FavoritesPage/>}/>
           <Route path='gameshop' element={<GameShopPage/>}/>
           <Route path='mygames' element={<MyGamesPage/>}/>
+          <Route path='mygames/:slug' element={<GamePage games={games} />}/>
+          <Route path='favorites/:slug' element={<GamePage games={games} />}/>
         </Route>
       </Routes>
   );
