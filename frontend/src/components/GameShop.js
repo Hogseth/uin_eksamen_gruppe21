@@ -1,37 +1,74 @@
-import { Link } from "react-router-dom"
-export default function GameShop(){
-    return(
-        <>
-        <div id="gameshop-title">
-            <h2>GAMESHOP</h2>
-            <Link to="gameshop"><p>Visit Shop</p></Link>
-        </div>
-        <section id="shop-section">
-            <div className="container">
-                <img src="https://placehold.jp/150x150.png"/>
-                <div className="games-info">
-                    <h2>TITLE</h2>
-                    <h3>Action</h3>
-                    <a>BUY</a>
-                </div>
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+export default function GameShop() {
+  const [games, setGames] = useState([]);
+
+  useEffect(() => {
+    async function fetchGames() {
+      const apiKey = '9334c7d3b22742539c1b4fd26c6d27a3';
+      const response = await fetch(`https://api.rawg.io/api/games?key=${apiKey}`);
+      const data = await response.json();
+      const slicedGames = data.results.slice(0, 3);
+
+      const updatedGames = await Promise.all(
+        slicedGames.map(async (game) => {
+          const gameResponse = await fetch(`https://api.rawg.io/api/games/${game.id}?key=${apiKey}`);
+          const gameData = await gameResponse.json();
+          const storeResponse = await fetch(`https://api.rawg.io/api/games/${game.id}/stores?key=${apiKey}`);
+          const storeData = await storeResponse.json();
+
+          const firstStore = storeData.results[0];
+
+          return {
+            id: game.id,
+            name: gameData.name,
+            genre: gameData.genres.map((genre) => genre.name).join(', '),
+            image: game.background_image,
+            storeUrl: firstStore.url,
+          };
+        })
+      );
+
+      setGames(updatedGames);
+    }
+
+    fetchGames();
+  }, []);
+
+  const openStoreLink = (url) => {
+    window.open(url, '_blank');
+  };
+
+  return (
+    <>
+      <div id="gameshop-title">
+        <h2>GAMESHOP</h2>
+        <Link to="/gameshop">
+          <p>Visit Shop</p>
+        </Link>
+      </div>
+      <section id="shop-section">
+        {games.map((game) => (
+          <div className="container" key={game.id}>
+            <img className="gameImg" src={game.image} alt={game.name} />
+            <div className="games-info">
+              <h2>{game.name}</h2>
+              <h3>{game.genre}</h3>
+              <a
+                onClick={() => openStoreLink(game.storeUrl)}
+                style={{ cursor: 'pointer' }}
+              >
+                BUY
+              </a>
             </div>
-            <div className="container">
-                <img src="https://placehold.jp/150x150.png"/>
-                <div className="games-info">
-                    <h2>TITLE</h2>
-                    <h3>Action</h3>
-                    <a>BUY</a>
-                </div>
-            </div>
-            <div className="container">
-                <img src="https://placehold.jp/150x150.png"/>
-                <div className="games-info">
-                    <h2>TITLE</h2>
-                    <h3>Action</h3>
-                    <a>BUY</a>
-                </div>
-            </div>
-        </section>
-        </>
-    )
+          </div>
+        ))}
+      </section>
+    </>
+  );
 }
+
+
+//https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all
+//https://www.w3schools.com/jsref/met_win_open.asp
