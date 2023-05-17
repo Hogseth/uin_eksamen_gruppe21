@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { fetchAllGames } from "../utils/sanity/showServices";
-import { Link } from "react-router-dom";
 
 const MyGamesCount = () => {
   const [games, setGames] = useState([]);

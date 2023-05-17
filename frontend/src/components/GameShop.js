@@ -13,14 +13,17 @@ export default function GameShop() {
 
       const updatedGames = await Promise.all(
         slicedGames.map(async (game) => {
-          const gameResponse = await fetch(`https://api.rawg.io/api/games/${game.id}?key=${apiKey}`);
-          const gameData = await gameResponse.json();
-          const storeResponse = await fetch(`https://api.rawg.io/api/games/${game.id}/stores?key=${apiKey}`);
-          const storeData = await storeResponse.json();
+        const gameResponse = await fetch(`https://api.rawg.io/api/games/${game.id}?key=${apiKey}`);
+        const gameData = await gameResponse.json();
+        const storeResponse = await fetch(`https://api.rawg.io/api/games/${game.id}/stores?key=${apiKey}`);
+        const storeData = await storeResponse.json();
+        const firstStore = storeData.results[0];
 
-          const firstStore = storeData.results[0];
 
-          return {
+
+
+        return {
+
             id: game.id,
             name: gameData.name,
             genre: gameData.genres.map((genre) => genre.name).join(', '),
@@ -31,7 +34,9 @@ export default function GameShop() {
       );
 
       setGames(updatedGames);
+      
     }
+
 
     fetchGames();
   }, []);
@@ -44,7 +49,7 @@ export default function GameShop() {
     <>
       <div id="gameshop-title">
         <h2>GAMESHOP</h2>
-        <Link to="/gameshop">
+        <Link to="gameshop">
           <p>Visit Shop</p>
         </Link>
       </div>
@@ -55,12 +60,7 @@ export default function GameShop() {
             <div className="games-info">
               <h2>{game.name}</h2>
               <h3>{game.genre}</h3>
-              <a
-                onClick={() => openStoreLink(game.storeUrl)}
-                style={{ cursor: 'pointer' }}
-              >
-                BUY
-              </a>
+              <a onClick={() => openStoreLink(game.storeUrl)} style={{ cursor: 'pointer' }}>BUY</a>
             </div>
           </div>
         ))}

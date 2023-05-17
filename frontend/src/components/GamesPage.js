@@ -26,7 +26,6 @@ const MyGames = () => {
     fetchData();
   }, []);
   
-  const countGames = () => games.length;
 
   return (
     <article className="gamecard">
