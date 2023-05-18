@@ -11,7 +11,7 @@ const MyGamesCount = () => {
       setGames(allGames);
 
       allGames.forEach(game => {
-        const apiKey = '9334c7d3b22742539c1b4fd26c6d27a3';
+        const apiKey = '28051d509bd94f1d98dfc83a47f631c4';
         const apiId = game.api_id;
         const url = `https://api.rawg.io/api/games/${apiId}?key=${apiKey}`;
         fetch(url)

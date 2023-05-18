@@ -13,7 +13,7 @@ const Favorites = () => {
       setGames(allGames);
       setGameCount(await favoriteGameCount());
       allGames.slice(0, 2).forEach(game => {
-        fetchGameDetails('9334c7d3b22742539c1b4fd26c6d27a3', game.api_id);
+        fetchGameDetails('28051d509bd94f1d98dfc83a47f631c4', game.api_id);
       });
     };
     fetchData();
@@ -47,7 +47,10 @@ const Favorites = () => {
       {games.slice(0, 2).map((game) => (
         <div key={game.api_id}>
            <Link to={{
-                pathname: `/favorites/${game.game_title}`,
+                pathname: `/favorites/${game.game_title
+                  .toLowerCase()
+                  .replace(/[^\w\s]+/g, "")
+                  .replace(/\s+/g, "-")}`,
                
             }}>
                 <h2>{game.game_title}</h2>

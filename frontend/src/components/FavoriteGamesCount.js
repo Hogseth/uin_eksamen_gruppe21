@@ -13,7 +13,7 @@ const FavoriteGamesCount = () => {
       setGames(allGames);
       setGameCount(await favoriteGameCount());
       allGames.forEach(game => {
-        fetchGameDetails('9334c7d3b22742539c1b4fd26c6d27a3', game.api_id);
+        fetchGameDetails('28051d509bd94f1d98dfc83a47f631c4', game.api_id);
       });
     };
     fetchData();

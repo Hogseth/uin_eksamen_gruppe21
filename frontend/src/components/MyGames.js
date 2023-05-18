@@ -12,7 +12,7 @@ const MyGames = () => {
       setGames(allGames);
 
       allGames.forEach(game => {
-        const apiKey = '9334c7d3b22742539c1b4fd26c6d27a3';
+        const apiKey = '28051d509bd94f1d98dfc83a47f631c4';
         const apiId = game.api_id;
         const url = `https://api.rawg.io/api/games/${apiId}?key=${apiKey}`;
         fetch(url)
@@ -43,9 +43,11 @@ const MyGames = () => {
       {games.slice(0, 4).map(game => (
         <div key={game.api_id}>
             <Link to={{
-                pathname: `/mygames/${game.game_title}`,
-               
-            }} games= {games}>
+        pathname: `/mygames/${game.game_title
+          .toLowerCase()
+          .replace(/[^\w\s]+/g, "")
+          .replace(/\s+/g, "-")}`,
+      }} games= {games}>
                 <h2>{game.game_title}</h2>
                 <img className="gameImg" src={gameDetails[game.api_id]?.background_image} alt={game.game_title} />
             </Link>
