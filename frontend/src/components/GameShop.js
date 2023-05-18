@@ -58,9 +58,9 @@ export default function GameShop() {
           <div className="container" key={game.id}>
             <img className="gameImg" src={game.image} alt={game.name} />
             <div className="games-info">
+            <a className="btn" href='#' onClick={() => openStoreLink(game.storeUrl)} style={{ cursor: 'pointer' }}>BUY</a>
               <h2>{game.name}</h2>
               <h3>{game.genre}</h3>
-              <a href='#' onClick={() => openStoreLink(game.storeUrl)} style={{ cursor: 'pointer' }}>BUY</a>
             </div>
           </div>
           

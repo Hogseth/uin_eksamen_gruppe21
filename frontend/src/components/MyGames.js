@@ -30,30 +30,28 @@ const MyGames = () => {
 
   return (
     
-    <article className="gamecard">
+    <article id="mygames-desk">
       <Link to="/mygames">
-      <div id="gameshop-title">
-          <button>Go to libary</button>
-        </div>
+      <a className="btn">Go to libary</a>
       </Link>
       <h2>My Games ({countGames()} Games) </h2>
-      {games.slice(0, 4).map(game => (
+      <div id="mygamecard">
+        {games.slice(0, 4).map(game => (
         <div key={game.api_id}>
-          <h2>{game.game_title}</h2>
           <img className="gameImg" src={gameDetails[game.api_id]?.background_image} alt={game.game_title} />
-          <p>{game.hours_played} hours played</p>
+          <h2>{game.game_title}</h2>
+          <p><strong>{game.hours_played}</strong> Hours played</p>
           <p>
-            Genres:{" "}
+            <strong>Genres:</strong>{" "}
             {game.game_genres.map((genre, index) => (
               <span key={genre.genre_slug.current}>
                 {index > 0 && ", "}
                 {genre.genre_title}
               </span>
-            ))}
-          </p>
-          {gameDetails[game.api_id] && <p>Released: {gameDetails[game.api_id].released}</p>}
+            ))}</p>
         </div>
       ))}
+      </div>
     </article>
   );
 };

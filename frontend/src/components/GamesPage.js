@@ -28,12 +28,12 @@ const MyGames = () => {
   
 
   return (
-    <article className="gamecard">
-      
+    <article className="my-games">
       {games.map(game => (
         <div className="con" key={game.api_id}>
-          <h2>{game.game_title}</h2>
+          
           <img className="gameImg" src={gameDetails[game.api_id]?.background_image} alt={game.game_title} />
+          <h2>{game.game_title}</h2>
           <p>{game.hours_played} hours played</p>
           <p>
             Genres:{" "}

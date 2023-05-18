@@ -37,13 +37,12 @@ const Favorites = () => {
   };
 //https://www.w3schools.com/jsref/api_fetch.asp
   return (
-    <article className="gamecard">
+    <article id="favorites-dash">
         <Link to="/favorites">
-      <div id="gameshop-title">
-          <button>Go to favorites</button>
-        </div>
-      </Link>
-      <h2>My Favorites ({gameCount} Games) </h2>
+        <a className="btn">Go to favorites</a>
+        </Link>
+        <h2>My Favorites ({gameCount} Games) </h2>
+      <div id="favorites-games">
       {games.slice(0, 2).map((game) => (
         <div key={game.api_id}>
           <h2>{game.game_title}</h2>
@@ -58,11 +57,9 @@ const Favorites = () => {
               </span>
             ))}
           </p>
-          {gameDetails[game.api_id] && (
-            <p>Released: {gameDetails[game.api_id].released}</p>
-          )}
         </div>
       ))}
+      </div>
     </article>
   );
 };

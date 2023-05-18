@@ -37,16 +37,14 @@ const FavGamesPage = () => {
   };
 //https://www.w3schools.com/jsref/api_fetch.asp
   return (
-    <article className="gamecard">
-        
-      
+    <article className="my-games">
       {games.map((game) => (
-        <div key={game.api_id}>
+        <div className="con"key={game.api_id}>
           <h2>{game.game_title}</h2>
           <img className="gameImg" src={gameDetails[game.api_id]?.background_image} alt={game.game_title} />
-          <p>{game.hours_played} hours played</p>
+          <p><strong>{game.hours_played}</strong> hours played</p>
           <p>
-            Genres:{" "}
+          <strong>Genres:</strong>{" "}
             {game.game_genres.map((genre, index) => (
               <span key={genre.genre_slug.current}>
                 {index > 0 && ", "}
@@ -55,7 +53,7 @@ const FavGamesPage = () => {
             ))}
           </p>
           {gameDetails[game.api_id] && (
-            <p>Released: {gameDetails[game.api_id].released}</p>
+            <p><strong>Released:</strong> {gameDetails[game.api_id].released}</p>
           )}
         </div>
       ))}
