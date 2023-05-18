@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { fetchFavoriteGames } from "../utils/sanity/showServices";
 import { favoriteGameCount } from "../utils/sanity/showServices";
-
+import { Link } from "react-router-dom";
 const FavGamesPage = () => {
   const [games, setGames] = useState([]);
   const [gameDetails, setGameDetails] = useState({}); 
