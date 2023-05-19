@@ -1,3 +1,8 @@
+$bg_color: #282827;
+$footer_color: #5C5A58;
+
+
+
 header {
     background-color: black;
     display: flex;
@@ -121,7 +126,7 @@ nav a {
 
 #shop-section {
     display: flex;
-    background-color: #282827;
+    background-color: $bg_color;
     margin: 1rem 2rem;
     padding: 3rem;
     border: 1px solid black;
@@ -265,7 +270,7 @@ nav a {
     max-width: 55%;
     border: 5px solid black;
     padding: 2rem;
-    background-color: #282827;
+    background-color: $bg_color;
     color: white;
 }
 
@@ -278,7 +283,7 @@ nav a {
     max-width: 55%;
     border: 5px solid black;
     padding: 2rem;
-    background-color: #282827;
+    background-color: $bg_color;
     color: white;
 }
 
@@ -300,7 +305,7 @@ nav a {
 }
 
 footer{
-    background-color: #5C5A58;
+    background-color: $footer_color;
     height: 200px;
     display: flex;
     align-items: center;
@@ -318,7 +323,7 @@ footer a{
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 1rem;
-    background-color: #282827;
+    background-color: $bg_color;
     padding: 2rem;
     border: 2px solid black;
     border-radius: 3%;
@@ -341,7 +346,7 @@ footer a{
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 1rem;
-    background-color: #282827;
+    background-color: $bg_color;
     padding: 2rem;
     border: 2px solid black;
     border-radius: 3%;
@@ -366,7 +371,7 @@ h1{
 #game-page {
     font-size: 20px;
     color: white;
-    background-color: #282827;
+    background-color: $bg_color;
     padding: 2rem 5rem;
 }
 
