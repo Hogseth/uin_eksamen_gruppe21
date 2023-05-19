@@ -38,7 +38,7 @@ const MyGames = () => {
       <div id="mygamecard">
         {games.slice(0, 4).map(game => (
         <div key={game.api_id}>
-          <Link to={`${game.game_title.replace(/\s/g, '-').replace(":", "").toLowerCase()}`}>
+          <Link to={`../${game.game_title.replace(/\s/g, '-').replace(":", "").toLowerCase()}`}>
           <img className="gameImg" src={gameDetails[game.api_id]?.background_image} alt={game.game_title} />
           <h2>{game.game_title}</h2>
           </Link>
