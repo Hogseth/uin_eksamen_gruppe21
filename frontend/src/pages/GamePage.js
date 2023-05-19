@@ -60,7 +60,7 @@ export default function GamePage(){
         <section id="game-page">
         <h1>{game.name}</h1>
         <div id="gamepage-info">
-        <img src={game.background_image} alt="game-image"/>
+        <img id="gameimage"src={game.background_image} alt="game-image"/>
             <aside id="aside-info">
                 <div className="info">
                 <span><strong>Developers:</strong></span> 

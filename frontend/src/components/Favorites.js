@@ -37,7 +37,7 @@ const Favorites = () => {
   };
 //https://www.w3schools.com/jsref/api_fetch.asp
   return (
-    <article id="favorites-dash">
+    <section id="favorites-dash">
         <Link to="/favorites">
         <p className="btn">Go to favorites</p>
         </Link>
@@ -62,7 +62,7 @@ const Favorites = () => {
         </div>
       ))}
       </div>
-    </article>
+    </section>
   );
 };
 

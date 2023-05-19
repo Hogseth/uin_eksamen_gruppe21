@@ -30,7 +30,7 @@ const MyGames = () => {
 
   return (
     
-    <article id="mygames-desk">
+    <section id="mygames-desk">
       <Link to="/mygames">
       <p className="btn">Go to libary</p>
       </Link>
@@ -54,7 +54,7 @@ const MyGames = () => {
         </div>
       ))}
       </div>
-    </article>
+    </section>
   );
 };
 //https://www.w3schools.com/react/react_props.asp

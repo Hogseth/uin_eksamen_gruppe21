@@ -28,7 +28,7 @@ const MyGames = () => {
   
 
   return (
-    <article className="my-games">
+    <section className="my-games">
       {games.map(game => (
         <div className="con" key={game.api_id}>
           <Link to={`../${game.game_title.replace(/\s/g, '-').replace(":", "").toLowerCase()}`}>
@@ -48,7 +48,7 @@ const MyGames = () => {
           {gameDetails[game.api_id] && <p>Released: {gameDetails[game.api_id].released}</p>}
         </div>
       ))}
-    </article>
+    </section>
   );
 };
 //https://www.w3schools.com/react/react_props.asp

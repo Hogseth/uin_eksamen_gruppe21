@@ -37,7 +37,7 @@ const FavGamesPage = () => {
   };
 //https://www.w3schools.com/jsref/api_fetch.asp
   return (
-    <article className="my-games">
+    <section className="my-games">
       {games.map((game) => (
         <div className="con"key={game.api_id}>
           <Link to={`${game.game_title.replace(/\s/g, '-').replace(":", "").toLowerCase()}`}>
@@ -59,7 +59,7 @@ const FavGamesPage = () => {
           )}
         </div>
       ))}
-    </article>
+    </section>
   );
 };
 
