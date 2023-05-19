@@ -15,7 +15,7 @@ export default function Header() {
     return(
         <>
             <header>
-                <Link to="dashboard">
+                <Link to="/">
                 <img src={logo} />
                 </Link>
                 <section id="top">
