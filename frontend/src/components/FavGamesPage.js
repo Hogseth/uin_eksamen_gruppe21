@@ -40,7 +40,7 @@ const FavGamesPage = () => {
     <article className="my-games">
       {games.map((game) => (
         <div className="con"key={game.api_id}>
-          <Link to={`../${game.game_title.replace(/\s/g, '-').replace(":", "").toLowerCase()}`}>
+          <Link to={`${game.game_title.replace(/\s/g, '-').replace(":", "").toLowerCase()}`}>
           <h2>{game.game_title}</h2>
           <img className="gameImg" src={gameDetails[game.api_id]?.background_image} alt={game.game_title} />
           </Link>
