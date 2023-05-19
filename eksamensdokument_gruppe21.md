@@ -13,7 +13,8 @@ Medlemmer(gitbrukernavn/navn):
 
 Vanskelighetsgrad valg: B
 
-Forutsetninger: 
-Utfordringer:
+Notes:
+Vi valgte å gjøre at hvert spill som trykkes på går til /:slug istedet for /favorites/:slug og /mygames/:slug siden det er et sentralt sted for spillet
+om man trykker på den fra favorites/mygames.
 
 
