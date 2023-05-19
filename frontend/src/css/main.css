@@ -7,10 +7,24 @@ header {
   height: 3rem;
   font-size: 20px;
 }
-.gameImg {
-  max-width: 150px;
-  max-height: 150px;
+
+body {
+  margin: 0;
 }
+
+html {
+  background-image: url("/src/images/bg.jpg");
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+#top p:hover {
+  color: red;
+}
+
 #top {
   display: flex;
   gap: 1rem;
@@ -49,6 +63,17 @@ header img {
   #menu {
     display: block;
   }
+  #gameshop-title {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  #gameshop-title h2 {
+    width: 90%;
+  }
+  #gameshop-title a {
+    padding-left: 1.5rem;
+  }
 }
 @media (min-width: 980px) {
   #menu {
@@ -82,16 +107,26 @@ nav a {
   display: flex;
   float: right;
   flex-direction: column;
+  position: fixed;
+  z-index: 999;
+  right: 0px;
+  top: 45px;
 }
 
 #shop-section {
   display: flex;
-  background-color: rgb(222, 217, 217);
-  margin: 0rem 2rem;
+  background-color: #282827;
+  margin: 1rem 2rem;
   padding: 3rem;
   border: 1px solid black;
-  justify-content: space-evenly;
-  overflow: hidden;
+  justify-content: space-between;
+  overflow: scroll;
+  color: white;
+}
+
+#shop-section img {
+  max-height: 196.88px;
+  width: auto;
 }
 
 #gameshop-title {
@@ -104,9 +139,9 @@ nav a {
   font-size: 25px;
 }
 
-#gameshop-title a {
+#gameshop-title p {
   margin: 0.4rem;
-  padding: 0.1rem 0.7rem;
+  padding: 0;
   font-size: 25px;
   font-weight: bold;
   border: 1px solid black;
@@ -117,6 +152,9 @@ nav a {
 
 .container {
   display: flex;
+  flex-wrap: wrap;
+  margin: 1rem;
+  padding: 0;
 }
 
 .games-info * {
@@ -183,11 +221,208 @@ nav a {
 
 #games {
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   flex-wrap: wrap;
+}
+
+#games .btn {
+  padding: 1rem;
+  max-width: 120px;
+  width: 100%;
 }
 
 #games-showcase {
   width: 55%;
+}
+
+.gameImg {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  max-height: 196.88px;
+}
+
+.gamecard {
+  margin-left: 2rem;
+}
+
+#favorites {
+  float: right;
+}
+
+#favorites-dash {
+  float: right;
+  margin: 2rem;
+  max-width: 55%;
+  border: 5px solid black;
+  padding: 2rem;
+  background-color: #282827;
+  color: white;
+}
+
+#favorites-games {
+  float: right;
+}
+
+#mygames-desk {
+  margin: 2rem;
+  max-width: 55%;
+  border: 5px solid black;
+  padding: 2rem;
+  background-color: #282827;
+  color: white;
+}
+
+#mygamecard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.btn {
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  padding: 0.1rem;
+  border-radius: 0.5rem;
+  max-width: 60px;
+}
+
+footer {
+  background-color: #5C5A58;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+footer a {
+  padding: 1rem;
+}
+
+.my-games {
+  margin: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: #282827;
+  padding: 2rem;
+  border: 2px solid black;
+  border-radius: 3%;
+}
+
+.con {
+  width: 20%;
+  min-width: 230px;
+  color: white;
+}
+
+.con img {
+  max-height: 171px;
+  width: 100%;
+}
+
+#gameshop-page {
+  margin: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: #282827;
+  padding: 2rem;
+  border: 2px solid black;
+  border-radius: 3%;
+  overflow: hidden;
+}
+
+h1 {
+  padding-left: 2rem;
+  font-size: 40px;
+}
+
+.store-btn {
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+  font-size: large;
+}
+
+#game-page {
+  font-size: 20px;
+  color: white;
+  background-color: #282827;
+  padding: 2rem 5rem;
+}
+
+#game-page h1 {
+  margin: 0;
+  padding-bottom: 1rem;
+  padding-left: 0;
+}
+
+#game-page p {
+  margin-bottom: 0;
+}
+
+#game-page #gameimage {
+  max-width: 65%;
+  min-width: 250px;
+  max-height: 600px;
+}
+
+#gamepage-info {
+  display: flex;
+}
+
+#aside-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 20px;
+}
+
+#aside-info .info {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.info-value {
+  float: right;
+  margin: 0;
+}
+
+#star {
+  max-height: 30px;
+  height: 100%;
+  width: auto;
+}
+
+#rating {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+#tags {
+  margin-top: 5rem;
+}
+
+#rating span {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
 }
 
 /*# sourceMappingURL=main.css.map */

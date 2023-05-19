@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { fetchAllGames } from "../utils/sanity/showServices";
-
+import { Link } from "react-router-dom";
 
 const MyGames = () => {
   const [games, setGames] = useState([]);
@@ -12,7 +12,7 @@ const MyGames = () => {
       setGames(allGames);
 
       allGames.forEach(game => {
-        const apiKey = '3cf4f9ea58da46afa7bdc7f1679a8629';
+        const apiKey = '28051d509bd94f1d98dfc83a47f631c4';
         const apiId = game.api_id;
         const url = `https://api.rawg.io/api/games/${apiId}?key=${apiKey}`;
         fetch(url)
@@ -26,15 +26,15 @@ const MyGames = () => {
     fetchData();
   }, []);
   
-  const countGames = () => games.length;
 
   return (
-    <article className="gamecard">
-      
+    <section className="my-games">
       {games.map(game => (
         <div className="con" key={game.api_id}>
-          <h2>{game.game_title}</h2>
+          <Link to={`../${game.game_title.replace(/\s/g, '-').replace(":", "").toLowerCase()}`}>
           <img className="gameImg" src={gameDetails[game.api_id]?.background_image} alt={game.game_title} />
+          <h2>{game.game_title}</h2>
+          </Link>
           <p>{game.hours_played} hours played</p>
           <p>
             Genres:{" "}
@@ -48,7 +48,7 @@ const MyGames = () => {
           {gameDetails[game.api_id] && <p>Released: {gameDetails[game.api_id].released}</p>}
         </div>
       ))}
-    </article>
+    </section>
   );
 };
 //https://www.w3schools.com/react/react_props.asp

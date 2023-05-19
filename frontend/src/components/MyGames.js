@@ -12,7 +12,7 @@ const MyGames = () => {
       setGames(allGames);
 
       allGames.forEach(game => {
-        const apiKey = '3cf4f9ea58da46afa7bdc7f1679a8629';
+        const apiKey = '28051d509bd94f1d98dfc83a47f631c4';
         const apiId = game.api_id;
         const url = `https://api.rawg.io/api/games/${apiId}?key=${apiKey}`;
         fetch(url)
@@ -30,31 +30,31 @@ const MyGames = () => {
 
   return (
     
-    <article className="gamecard">
+    <section id="mygames-desk">
       <Link to="/mygames">
-      <div id="gameshop-title">
-          <button>Go to libary</button>
-        </div>
+      <p className="btn">Go to libary</p>
       </Link>
       <h2>My Games ({countGames()} Games) </h2>
-      {games.slice(0, 4).map(game => (
+      <div id="mygamecard">
+        {games.slice(0, 4).map(game => (
         <div key={game.api_id}>
-          <h2>{game.game_title}</h2>
+          <Link to={`${game.game_title.replace(/\s/g, '-').replace(":", "").toLowerCase()}`}>
           <img className="gameImg" src={gameDetails[game.api_id]?.background_image} alt={game.game_title} />
-          <p>{game.hours_played} hours played</p>
+          <h2>{game.game_title}</h2>
+          </Link>
+          <p><strong>{game.hours_played}</strong> Hours played</p>
           <p>
-            Genres:{" "}
+            <strong>Genres:</strong>{" "}
             {game.game_genres.map((genre, index) => (
               <span key={genre.genre_slug.current}>
                 {index > 0 && ", "}
                 {genre.genre_title}
               </span>
-            ))}
-          </p>
-          {gameDetails[game.api_id] && <p>Released: {gameDetails[game.api_id].released}</p>}
+            ))}</p>
         </div>
       ))}
-    </article>
+      </div>
+    </section>
   );
 };
 //https://www.w3schools.com/react/react_props.asp

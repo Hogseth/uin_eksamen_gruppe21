@@ -18,7 +18,6 @@ export default function Header() {
                 <Link to="/">
                 <img src={logo} />
                 </Link>
-                
                 <section id="top">
                     <Link to="gameshop"><p>Shop</p></Link>
                     <Link to="mygames"><p>My Games</p></Link>

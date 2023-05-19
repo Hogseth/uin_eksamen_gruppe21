@@ -13,7 +13,7 @@ const Favorites = () => {
       setGames(allGames);
       setGameCount(await favoriteGameCount());
       allGames.slice(0, 2).forEach(game => {
-        fetchGameDetails('3cf4f9ea58da46afa7bdc7f1679a8629', game.api_id);
+        fetchGameDetails('28051d509bd94f1d98dfc83a47f631c4', game.api_id);
       });
     };
     fetchData();
@@ -37,17 +37,18 @@ const Favorites = () => {
   };
 //https://www.w3schools.com/jsref/api_fetch.asp
   return (
-    <article className="gamecard">
+    <section id="favorites-dash">
         <Link to="/favorites">
-      <div id="gameshop-title">
-          <button>Go to favorites</button>
-        </div>
-      </Link>
-      <h2>My Favorites ({gameCount} Games) </h2>
+        <p className="btn">Go to favorites</p>
+        </Link>
+        <h2>My Favorites ({gameCount} Games) </h2>
+      <div id="favorites-games">
       {games.slice(0, 2).map((game) => (
         <div key={game.api_id}>
-          <h2>{game.game_title}</h2>
+          <Link to={`../${game.game_title.replace(/\s/g, '-').toLowerCase()}`}>
           <img className="gameImg" src={gameDetails[game.api_id]?.background_image} alt={game.game_title} />
+          <h2>{game.game_title}</h2>
+          </Link>
           <p>{game.hours_played} hours played</p>
           <p>
             Genres:{" "}
@@ -58,12 +59,10 @@ const Favorites = () => {
               </span>
             ))}
           </p>
-          {gameDetails[game.api_id] && (
-            <p>Released: {gameDetails[game.api_id].released}</p>
-          )}
         </div>
       ))}
-    </article>
+      </div>
+    </section>
   );
 };
 
