@@ -13,7 +13,7 @@ const Favorites = () => {
       setGames(allGames);
       setGameCount(await favoriteGameCount());
       allGames.slice(0, 2).forEach(game => {
-        fetchGameDetails('9334c7d3b22742539c1b4fd26c6d27a3', game.api_id);
+        fetchGameDetails('28051d509bd94f1d98dfc83a47f631c4', game.api_id);
       });
     };
     fetchData();
@@ -39,14 +39,16 @@ const Favorites = () => {
   return (
     <article id="favorites-dash">
         <Link to="/favorites">
-        <a className="btn">Go to favorites</a>
+        <p className="btn">Go to favorites</p>
         </Link>
         <h2>My Favorites ({gameCount} Games) </h2>
       <div id="favorites-games">
       {games.slice(0, 2).map((game) => (
         <div key={game.api_id}>
-          <h2>{game.game_title}</h2>
+          <Link to={`${game.game_title.replace(/\s/g, '-').toLowerCase()}`}>
           <img className="gameImg" src={gameDetails[game.api_id]?.background_image} alt={game.game_title} />
+          <h2>{game.game_title}</h2>
+          </Link>
           <p>{game.hours_played} hours played</p>
           <p>
             Genres:{" "}

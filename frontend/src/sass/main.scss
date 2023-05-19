@@ -7,6 +7,9 @@ header {
     height: 3rem;
     font-size: 20px;
 }
+body{
+    margin: 0;
+}
 
 html{
     background-image: url("/src/images/bg.jpg"); 
@@ -17,7 +20,7 @@ a {
     color: white;
 }
 
-#top a:hover {
+#top p:hover {
     color: red;
 }
 
@@ -62,6 +65,19 @@ header img{
         display: block;
     }
 
+    #gameshop-title{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    #gameshop-title h2{
+        width: 90%;
+    }
+
+    #gameshop-title a{
+        padding-left: 1.5rem;
+    }
 }
 
 @media (min-width: 980px) {
@@ -89,7 +105,7 @@ nav a {
 }
 
 #list.show{
-    display: block;
+    display: block; 
     background-color: black;
     color: white;
     width: 10rem;
@@ -97,6 +113,10 @@ nav a {
     display: flex;
     float: right;
     flex-direction: column;
+    position: fixed;
+    z-index: 999;
+    right: 0px;
+    top: 45px;
 }
 
 #shop-section {
@@ -214,6 +234,12 @@ nav a {
     
 }
 
+#games .btn{
+    padding: 1rem;
+    max-width: 120px;
+    width: 100%;
+}
+
 #games-showcase{
     width: 55%;
 }
@@ -300,12 +326,13 @@ footer a{
 
 .con{
     width: 20%;
+    min-width: 230px;
     color: white;
 }
 
 .con img{
     max-height: 171px;
-    width: auto; 
+    width: 100%; 
 }
 
 #gameshop-page{
@@ -318,6 +345,7 @@ footer a{
     padding: 2rem;
     border: 2px solid black;
     border-radius: 3%;
+    overflow: hidden;
 }
 
 h1{
@@ -334,3 +362,74 @@ h1{
     border-radius: .5rem;
     font-size: large;
 }
+
+#game-page {
+    font-size: 20px;
+    color: white;
+    background-color: #282827;
+    padding: 2rem 5rem;
+}
+
+#game-page h1{
+    margin: 0;
+    padding-bottom: 1rem;
+    padding-left: 0;
+}
+
+#game-page p{
+    margin-bottom: 0;
+}
+
+#game-page img{
+    height: 500px;
+}
+
+#gamepage-info{
+    display: flex;
+}
+
+#aside-info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+}
+
+#aside-info .info {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+}
+
+
+.info-value{
+    float: right;
+    margin: 0;
+}
+
+#star{
+    max-height: 30px;
+    height:100%;
+    width: auto;
+}
+
+#rating{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+#tags{
+    margin-top: 5rem;
+}
+
+#rating span{
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+}
+
+

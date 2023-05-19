@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { fetchFavoriteGames } from "../utils/sanity/showServices";
-import { favoriteGameCount } from "../utils/sanity/showServices";
+import { Link } from "react-router-dom";
 
 const FavGamesPage = () => {
   const [games, setGames] = useState([]);
@@ -13,7 +13,7 @@ const FavGamesPage = () => {
       setGames(allGames);
       //setGameCount(await favoriteGameCount()); //
       allGames.forEach(game => {
-        fetchGameDetails('9334c7d3b22742539c1b4fd26c6d27a3', game.api_id);
+        fetchGameDetails('28051d509bd94f1d98dfc83a47f631c4', game.api_id);
       });
     }; 
     fetchData();
@@ -40,8 +40,10 @@ const FavGamesPage = () => {
     <article className="my-games">
       {games.map((game) => (
         <div className="con"key={game.api_id}>
+          <Link to={`../${game.game_title.replace(/\s/g, '-').replace(":", "").toLowerCase()}`}>
           <h2>{game.game_title}</h2>
           <img className="gameImg" src={gameDetails[game.api_id]?.background_image} alt={game.game_title} />
+          </Link>
           <p><strong>{game.hours_played}</strong> hours played</p>
           <p>
           <strong>Genres:</strong>{" "}

@@ -15,14 +15,13 @@ export default function Header() {
     return(
         <>
             <header>
-                <Link to="/">
+                <Link to="dashboard">
                 <img src={logo} />
                 </Link>
-                
                 <section id="top">
-                    <Link to="gameshop"><a>Shop</a></Link>
-                    <Link to="mygames"><a>My Games</a></Link>
-                    <Link to="favorites"><a>Favourites</a></Link>
+                    <Link to="gameshop"><p>Shop</p></Link>
+                    <Link to="mygames"><p>My Games</p></Link>
+                    <Link to="favorites"><p>Favourites</p></Link>
                     <img id="profilepicture" src={userimg} />
                     <p>USERNAME</p>
                     <img id="menu" src={menu} onClick={toggleMenu} />

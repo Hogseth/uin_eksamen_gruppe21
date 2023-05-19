@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 
 export default function GameShopPage() {
@@ -6,7 +7,7 @@ export default function GameShopPage() {
 
   useEffect(() => {
     async function fetchGames() {
-      const apiKey = '9334c7d3b22742539c1b4fd26c6d27a3';
+      const apiKey = '28051d509bd94f1d98dfc83a47f631c4';
       const response = await fetch(`https://api.rawg.io/api/games?key=${apiKey}`);
       const data = await response.json();
       const gameshopGames = data.results
@@ -47,14 +48,13 @@ export default function GameShopPage() {
 
   return (
     <>
-     
       <section id="gameshop-page">
         {games.map((game) => (
           <div className="con" key={game.id}>
             <img className="gameImg" src={game.image} alt={game.name} />
-              <h2>{game.name}</h2>
-              <h3>{game.genre}</h3>
-              <a className="store-btn" href='#' onClick={() => openStoreLink(game.storeUrl)} style={{ cursor: 'pointer' }}>BUY</a>
+            <h2>{game.name}</h2>
+            <h3>{game.genre}</h3>
+            <a className="store-btn" href='#' onClick={() => openStoreLink(game.storeUrl)} style={{ cursor: 'pointer' }}>BUY</a>
           </div>
         ))}
       </section>
