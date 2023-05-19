@@ -9,18 +9,21 @@ import GamePage from "./pages/GamePage";
 
 function App() {
 
+  // api key
+  const api_key = ""
+
 
   return (
       <Routes>
         <Route element={<Layout/>}>
-          <Route index element={<Dashboard/>} />
-          <Route path='favorites' element={<FavoritesPage/>}>
+          <Route index element={<Dashboard api_key={api_key}/>} />
+          <Route path='favorites' element={<FavoritesPage api_key={api_key}/>}>
           </Route>
-          <Route path='gameshop' element={<GameShopPage/>}>
+          <Route path='gameshop' element={<GameShopPage api_key={api_key}/>}>
           </Route>
-          <Route path='mygames' element={<MyGamesPage/>}>
+          <Route path='mygames' element={<MyGamesPage api_key={api_key}/>}>
           </Route>
-          <Route path=":slug" element={<GamePage/>}/>
+          <Route path=":slug" element={<GamePage api_key={api_key}/>}/>
         </Route>
       </Routes>
   );

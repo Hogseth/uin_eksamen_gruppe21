@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { fetchAllGames } from "../utils/sanity/showServices";
 import { Link } from "react-router-dom";
 
-const MyGames = () => {
+const MyGames = ({api_key}) => {
   const [games, setGames] = useState([]);
   const [gameDetails, setGameDetails] = useState({});
 
@@ -12,7 +12,7 @@ const MyGames = () => {
       setGames(allGames);
 
       allGames.forEach(game => {
-        const apiKey = '28051d509bd94f1d98dfc83a47f631c4';
+        const apiKey = `${api_key}`;
         const apiId = game.api_id;
         const url = `https://api.rawg.io/api/games/${apiId}?key=${apiKey}`;
         fetch(url)

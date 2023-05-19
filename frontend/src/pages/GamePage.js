@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom"
 import { fetchId, getGameId } from "../utils/sanity/showServices";
 import star from '../images/star.png'
 
-export default function GamePage(){
+export default function GamePage({api_key}){
 
     var game_id = 0
 
@@ -24,7 +24,7 @@ export default function GamePage(){
             game_id = game[0]
             console.log(game_id)
             console.log(game)
-            const reponse = await fetch(`https://api.rawg.io/api/games/${game_id}?key=28051d509bd94f1d98dfc83a47f631c4`)
+            const reponse = await fetch(`https://api.rawg.io/api/games/${game_id}?key=${api_key}`)
         const data = await reponse.json()
         console.log(data)
         setGames(data)

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { fetchFavoriteGames } from "../utils/sanity/showServices";
 import { favoriteGameCount } from "../utils/sanity/showServices";
 import { Link } from "react-router-dom";
-const Favorites = () => {
+const Favorites = ({api_key}) => {
   const [games, setGames] = useState([]);
   const [gameDetails, setGameDetails] = useState({}); 
    const [gameCount, setGameCount] = useState(0);
@@ -13,7 +13,7 @@ const Favorites = () => {
       setGames(allGames);
       setGameCount(await favoriteGameCount());
       allGames.slice(0, 2).forEach(game => {
-        fetchGameDetails('28051d509bd94f1d98dfc83a47f631c4', game.api_id);
+        fetchGameDetails(`${api_key}`, game.api_id);
       });
     };
     fetchData();

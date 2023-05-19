@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function GameShop() {
+export default function GameShop({api_key}) {
   const [games, setGames] = useState([]);
 
   useEffect(() => {
     async function fetchGames() {
-      const apiKey = '28051d509bd94f1d98dfc83a47f631c4';
+      const apiKey = `${api_key}`;
       const response = await fetch(`https://api.rawg.io/api/games?key=${apiKey}&page=1`);
       const data = await response.json();
       const slicedGames = data.results.slice(0, 3);
